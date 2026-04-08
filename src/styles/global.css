@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(234, 179, 123, 0.28), transparent 28%),
+    radial-gradient(circle at top right, rgba(251, 191, 114, 0.18), transparent 24%),
+    linear-gradient(180deg, #fffaf5 0%, #fffdf8 42%, #f8f1e9 100%);
+  color: #352c25;
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(217, 119, 87, 0.22);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 50;
+  transform: translateY(-200%);
+  border-radius: 999px;
+  background: #352c25;
+  color: #fffaf5;
+  padding: 0.75rem 1rem;
+  transition: transform 150ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.mesh-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mesh-backdrop::before,
+.mesh-backdrop::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+}
+
+.mesh-backdrop::before {
+  left: -4rem;
+  top: -5rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(217, 119, 87, 0.18);
+}
+
+.mesh-backdrop::after {
+  right: -5rem;
+  top: 10rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(191, 167, 142, 0.16);
+}
+
+.surface-card {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 251, 247, 0.78);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 24px 80px -36px rgba(128, 91, 64, 0.4);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 119, 87, 0.18);
+  background: rgba(255, 248, 241, 0.92);
+  padding: 0.55rem 0.9rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9a5a3c;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #d97757;
+  box-shadow: 0 0 0 5px rgba(217, 119, 87, 0.13);
+}
+
+.page-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.article-copy {
+  color: #4d4036;
+  font-size: 1rem;
+  line-height: 1.95;
+}
+
+.article-copy :where(h2, h3) {
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-serif);
+  color: #2f241d;
+}
+
+.article-copy p,
+.article-copy ul,
+.article-copy ol,
+.article-copy blockquote {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.article-copy ul,
+.article-copy ol {
+  padding-left: 1.2rem;
+}
+
+.article-copy ul {
+  list-style: disc;
+}
+
+.article-copy ol {
+  list-style: decimal;
+}
+
+.article-copy blockquote {
+  border-left: 3px solid rgba(217, 119, 87, 0.35);
+  padding-left: 1rem;
+  color: #6a5848;
+}
+
+.fade-up {
+  animation: rise-in 0.7s ease both;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
