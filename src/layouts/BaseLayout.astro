@@ -1,0 +1,37 @@
+---
+import SiteFooter from '@/components/SiteFooter.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import '@/styles/global.css';
+import { site } from '@/lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const { title, description = site.description, currentPath = Astro.url.pathname } = Astro.props as Props;
+const pageTitle = title ? `${title} | ${site.title}` : site.title;
+---
+
+<!doctype html>
+<html lang={site.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content={site.themeColor} />
+    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到主要内容</a>
+    <div class="mesh-backdrop"></div>
+    <SiteHeader currentPath={currentPath} />
+    <main id="content" class="pt-8 sm:pt-10">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>
