@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Portfolio favicon</title>
+  <desc id="desc">A warm abstract monogram-like mark for the portfolio site.</desc>
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f4c48d" />
+      <stop offset="100%" stop-color="#d97757" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#fff7ef" />
+  <path
+    d="M17 42V22h12.8c7.1 0 11.8 3.5 11.8 9.4 0 6-4.7 10.6-11.8 10.6Zm8-6.4h4.2c2.8 0 4.7-1.6 4.7-4.1 0-2.4-1.9-3.8-4.7-3.8H25Z"
+    fill="url(#g)"
+  />
+  <path
+    d="M38.5 41.8 45 22h4l-6.7 19.8Z"
+    fill="#d97757"
+    opacity=".75"
+  />
+</svg>
