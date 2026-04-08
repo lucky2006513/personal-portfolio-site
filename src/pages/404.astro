@@ -1,0 +1,31 @@
+---
+import Container from '@/components/Container.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { withBase } from '@/lib/paths';
+---
+
+<BaseLayout title="页面不存在" currentPath={Astro.url.pathname}>
+  <Container class="py-16 sm:py-24">
+    <section class="surface-card rounded-[2rem] p-8 text-center sm:p-12">
+      <span class="eyebrow">404</span>
+      <h1 class="mt-5 font-serif text-4xl text-stone-900 sm:text-5xl">这个页面还没有准备好</h1>
+      <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-stone-600">
+        链接可能已经失效，或者这个内容还没有发布。你可以先回到首页或作品集页继续浏览。
+      </p>
+      <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+        <a
+          class="inline-flex items-center justify-center rounded-full bg-stone-900 px-6 py-3 text-sm font-medium text-stone-50 transition hover:bg-stone-700"
+          href={withBase('/')}
+        >
+          返回首页
+        </a>
+        <a
+          class="inline-flex items-center justify-center rounded-full border border-orange-200 bg-white/80 px-6 py-3 text-sm font-medium text-stone-900 transition hover:bg-orange-50"
+          href={withBase('/projects')}
+        >
+          查看作品集
+        </a>
+      </div>
+    </section>
+  </Container>
+</BaseLayout>
